@@ -35,16 +35,13 @@ function App() {
       
        setTodo(value)
 
+       
      handledelete(value)
-    
-
-
-      
     }
 
   return (
     <>
-     <div className='text-4xl flex justify-center items-center p-2 font-bold text-white'>
+     <div  className='text-4xl flex justify-center items-center p-2 font-bold text-white'>
       Todo-list
     </div>
      {/* <Navbar/> */}
