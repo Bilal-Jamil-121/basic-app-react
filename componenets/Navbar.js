@@ -32,10 +32,10 @@ const Navbar = () => {
       {menuclick && (
         <div className='md:hidden bg-gray-800 rounded mt-3 px-4 py-3'>
           <ul className='flex flex-col gap-3 text-sm font-semibold text-gray-200'>
-            <Link href='/'><li className='hover:text-white cursor-pointer'>Weather App</li></Link>
-            <Link href='/about'><li className='hover:text-white cursor-pointer'>Currency Convertor</li></Link>
-            <Link href='/contact'><li className='hover:text-white cursor-pointer'>Quiz</li></Link>
-            <Link href='/todo'><li className='hover:text-white cursor-pointer'>Todo-List</li></Link>
+            <Link href='/'><li  onClick={handlemenu} className='hover:text-white cursor-pointer'>Weather App</li></Link>
+            <Link  href='/about'><li  onClick={handlemenu} className='hover:text-white cursor-pointer'>Currency Convertor</li></Link>
+            <Link href='/contact'><li  onClick={handlemenu}  className='hover:text-white cursor-pointer'>Quiz</li></Link>
+            <Link  href='/todo'><li onClick={handlemenu} className='hover:text-white cursor-pointer'>Todo-List</li></Link>
           </ul>
         </div>
       )}

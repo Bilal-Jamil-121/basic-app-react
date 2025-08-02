@@ -42,7 +42,7 @@ inputRef.current.value=""
 console.log(data);
 
     } catch (error) {
-      alert("City not found in records, Error fetching weather: ", error);
+      alert("City not found in records.\nError: " + error.message);
       inputRef.current.value=""
     }
   };
