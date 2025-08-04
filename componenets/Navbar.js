@@ -48,24 +48,25 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      {menuclick && (
-        <div className='md:hidden bg-gray-100 rounded mt-3 px-4 py-3 shadow-inner'>
-          <ul className='flex flex-col gap-4 text-base font-medium text-gray-800'>
-            <li  onClick={handlemenu}>
-              <Link href='/' className=' hover:text-blue-600  transition'>Weather App</Link>
-            </li>
-            <li onClick={handlemenu}>
-              <Link href='/about' className='hover:text-blue-600 transition'>Currency Convertor</Link>
-            </li>
-            <li onClick={handlemenu}>
-              <Link href='/contact' className='hover:text-blue-600 transition'>Quiz</Link>
-            </li>
-            <li onClick={handlemenu}>
-              <Link href='/todo' className='hover:text-blue-600  transition'>Todo-List</Link>
-            </li>
-          </ul>
-        </div>
-      )}
+     {menuclick && (
+  <div className='md:hidden bg-gray-100 rounded mt-3 px-4 py-3 shadow-inner'>
+    <ul className='flex flex-col gap-4 text-base font-medium text-gray-800'>
+      <Link href='/' onClick={handlemenu}>
+        <li className='hover:text-blue-600 transition w-full px-2 py-1'>Weather App</li>
+      </Link>
+      <Link href='/about' onClick={handlemenu}>
+        <li className='hover:text-blue-600 transition w-full px-2 py-1'>Currency Convertor</li>
+      </Link>
+      <Link href='/contact' onClick={handlemenu}>
+        <li className='hover:text-blue-600 transition w-full px-2 py-1'>Quiz</li>
+      </Link>
+      <Link href='/todo' onClick={handlemenu}>
+        <li className='hover:text-blue-600 transition w-full px-2 py-1'>Todo-List</li>
+      </Link>
+    </ul>
+  </div>
+)}
+
     </nav>
   );
 };

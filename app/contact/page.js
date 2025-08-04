@@ -69,7 +69,7 @@ const Page = () => {
   return () => clearInterval(interval);
 }, [start, counter, finished]);
 
-  
+
 
   const handleAnswer = (ans) => {
     if (answered) return;
