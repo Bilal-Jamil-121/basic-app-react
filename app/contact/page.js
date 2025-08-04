@@ -116,7 +116,7 @@ const Page = () => {
     <div className='mt-5 max-w-xl mx-auto px-2'>
       
       <h1 className='flex justify-center font-bold text-2xl mb-4'>Quiz App</h1>
-      <h1 className='flex text-red-500 justify-center font-bold text-2xl mb-4'>Time {counter} sec out of 60 sec</h1>
+      <h1 className='flex text-red-500 justify-center font-bold text-2xl mb-4'>Time {counter} sec out of 100 sec</h1>
     { !start&&( <button onClick={()=>{
       setFinished(!finished);
       setstart(!start)
