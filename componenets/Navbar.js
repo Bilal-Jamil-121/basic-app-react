@@ -10,36 +10,63 @@ const Navbar = () => {
   }
 
   return (
-    <div className='bg-amber-50 text-black px-6 py-4 shadow-md'>
-      <div className='flex items-center justify-between'>
-        <h1 className='text-xl font-bold'>First App</h1>
+    <nav className='bg-gradient-to-r from-gray-700 to-white text-black px-6 py-4 shadow-lg'>
+      <div className='max-w-7xl mx-auto flex items-center justify-between'>
+        <h1 className='text-2xl font-extrabold tracking-tight'>First App</h1>
 
-        <ul className='hidden md:flex gap-8 font-medium'>
-          <Link href='/'><li className='hover:font-bold cursor-pointer'>Weather App</li></Link>
-          <Link href='/about'><li className='hover:font-bold cursor-pointer'>Currency Convertor</li></Link>
-          <Link href='/contact'><li className='hover:font-bold cursor-pointer'>Quiz</li></Link>
-          <Link href='/todo'><li className='hover:font-bold cursor-pointer'>Todo-List</li></Link>
+        {/* Desktop menu */}
+        <ul className='hidden md:flex gap-8 font-medium text-lg'>
+          <li>
+            <Link href='/' className='hover:text-blue-600 hover:font-semibold transition'>
+              Weather App
+            </Link>
+          </li>
+          <li>
+            <Link href='/about' className='hover:text-blue-600 hover:font-semibold transition'>
+              Currency Convertor
+            </Link>
+          </li>
+          <li>
+            <Link href='/contact' className='hover:text-blue-600 hover:font-semibold transition'>
+              Quiz
+            </Link>
+          </li>
+          <li>
+            <Link href='/todo' className='hover:text-blue-600 hover:font-semibold transition'>
+              Todo-List
+            </Link>
+          </li>
         </ul>
 
+        {/* Mobile menu toggle */}
         <button
           onClick={handlemenu}
-          className='md:hidden bg-gray-200 p-2 rounded focus:outline-none'
+          className='md:hidden bg-gray-100 p-2 rounded-lg hover:bg-gray-200 transition'
         >
-          <img className='h-5 w-5' src='menu.svg' alt='menu' />
+          <img className='h-6 w-6' src='/menu.svg' alt='menu' />
         </button>
       </div>
 
+      {/* Mobile menu */}
       {menuclick && (
-        <div className='md:hidden bg-gray-800 rounded mt-3 px-4 py-3'>
-          <ul className='flex flex-col gap-3 text-sm font-semibold text-gray-200'>
-            <Link href='/'><li  onClick={handlemenu} className='hover:text-white cursor-pointer'>Weather App</li></Link>
-            <Link  href='/about'><li  onClick={handlemenu} className='hover:text-white cursor-pointer'>Currency Convertor</li></Link>
-            <Link href='/contact'><li  onClick={handlemenu}  className='hover:text-white cursor-pointer'>Quiz</li></Link>
-            <Link  href='/todo'><li onClick={handlemenu} className='hover:text-white cursor-pointer'>Todo-List</li></Link>
+        <div className='md:hidden bg-gray-100 rounded mt-3 px-4 py-3 shadow-inner'>
+          <ul className='flex flex-col gap-4 text-base font-medium text-gray-800'>
+            <li  onClick={handlemenu}>
+              <Link href='/' className=' hover:text-blue-600  transition'>Weather App</Link>
+            </li>
+            <li onClick={handlemenu}>
+              <Link href='/about' className='hover:text-blue-600 transition'>Currency Convertor</Link>
+            </li>
+            <li onClick={handlemenu}>
+              <Link href='/contact' className='hover:text-blue-600 transition'>Quiz</Link>
+            </li>
+            <li onClick={handlemenu}>
+              <Link href='/todo' className='hover:text-blue-600  transition'>Todo-List</Link>
+            </li>
           </ul>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 
