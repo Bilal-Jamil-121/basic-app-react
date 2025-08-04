@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 const Page = () => {
   const mcq = [
@@ -48,8 +48,28 @@ const Page = () => {
   const [index, setIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [answered, setAnswered] = useState(false);
-  const [finished, setFinished] = useState(false);
+  const [finished, setFinished] = useState(true);
   const [Correct, setCorrect] = useState(0);
+  const [counter, setcounter] = useState(0)
+  const [start, setstart] = useState(false)
+
+
+ useEffect(() => {
+  let interval;
+  if (start && !finished && counter < 100) {
+    interval = setInterval(() => {
+      setcounter((prev) => prev + 1);
+    }, 1000);
+  }
+
+  if (counter === 100) {
+    setFinished(true);
+  }
+
+  return () => clearInterval(interval);
+}, [start, counter, finished]);
+
+  
 
   const handleAnswer = (ans) => {
     if (answered) return;
@@ -70,14 +90,18 @@ const Page = () => {
       setFinished(true);
     }
   };
-
+ 
   const handlereset = () => {
     setAnswered(false);
     setCorrect(0);
     setIndex(0);
-    setFinished(false);
     setSelectedOption(null);
+    setstart(false)
+    setcounter(0)
   };
+  function handlegiveup() {
+    setFinished(true)
+  }
 
   const question = mcq[index];
 
@@ -90,7 +114,15 @@ const Page = () => {
 
   return (
     <div className='mt-5 max-w-xl mx-auto px-2'>
+      
       <h1 className='flex justify-center font-bold text-2xl mb-4'>Quiz App</h1>
+      <h1 className='flex text-red-500 justify-center font-bold text-2xl mb-4'>Time {counter} sec out of 60 sec</h1>
+    { !start&&( <button onClick={()=>{
+      setFinished(!finished);
+      setstart(!start)
+     }} className="bg-blue-600 text-white px-5 w-full mb-2 py-2 rounded hover:bg-blue-700">
+        Start
+      </button>)}
       <hr />
       {!finished && (
         <>
@@ -104,7 +136,7 @@ const Page = () => {
               <li className={`p-3 rounded cursor-pointer border ${getOptionClass("D")}`} onClick={() => handleAnswer("D")}>{question.option4}</li>
             </ul>
 
-            <div className='flex justify-center mt-6'>
+            <div className='flex justify-center gap-3 mt-6'>
               <button
                 onClick={handleNext}
                 disabled={!answered}
@@ -114,12 +146,21 @@ const Page = () => {
               >
                 Next
               </button>
+              <button
+                onClick={handlegiveup}
+               
+                className={`px-5 py-2 rounded font-semibold text-white transition-all   
+                    bg-red-600 hover:bg-red-700 cursor-pointer`
+                   }
+              >
+                Give Up
+              </button>
             </div>
           </div>
         </>
       )}
 
-      {finished && (
+      {(finished && start) && (
         <div className='text-center mt-10'>
           <h2 className='text-2xl font-bold mb-2'>Quiz Completed!</h2>
           <p className='text-lg mb-6'>You scored {Correct} out of {mcq.length}</p>
