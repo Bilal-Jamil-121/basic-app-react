@@ -43,7 +43,7 @@ function App() {
             />
             <button
               onClick={handlesave}
-              className="bg-blue-600 cursor-pointer w-full px-4 py-2 rounded-lg text-white font-semibold hover:bg-blue-400 transition"
+              className="bg-blue-600 cursor-pointer w-full md:w-auto px-4 py-2 rounded-lg text-white font-semibold hover:bg-blue-400 transition"
             >
               Save
             </button>
