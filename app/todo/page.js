@@ -33,7 +33,7 @@ function App() {
 
       <div className="bg-gray-900 min-h-screen p-6">
         <div className="md:max-w-xl mx-auto bg-gray-800 md:p-6 p-2  rounded-xl shadow-lg space-y-4">
-          <div className="flex md:gap-3">
+          <div className="md:flex md:gap-3">
             <input
               value={Todo}
               onChange={(e) => setTodo(e.target.value)}
@@ -43,7 +43,7 @@ function App() {
             />
             <button
               onClick={handlesave}
-              className="bg-blue-600 cursor-pointer px-4 py-2 rounded-lg text-white font-semibold hover:bg-blue-400 transition"
+              className="bg-blue-600 cursor-pointer w-full px-4 py-2 rounded-lg text-white font-semibold hover:bg-blue-400 transition"
             >
               Save
             </button>
