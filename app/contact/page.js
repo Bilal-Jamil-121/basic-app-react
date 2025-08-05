@@ -113,9 +113,9 @@ const Page = () => {
   };
 
   return (
-    <div className='mt-5 w-full  mx-auto md:px-100 bg-black min-h-screen'>
+    <div className='pt-5 w-full  mx-auto md:px-100 bg-black min-h-screen'>
       
-      <h1 className='flex justify-center font-bold text-2xl mb-4'>Quiz App</h1>
+      <h1 className='flex justify-center text-white font-bold text-2xl mb-4'>Quiz App</h1>
       <h1 className='flex text-red-500 justify-center font-bold text-2xl mb-4'>Time {counter} sec out of 100 sec</h1>
     { !start&&( <button onClick={()=>{
       setFinished(!finished);
