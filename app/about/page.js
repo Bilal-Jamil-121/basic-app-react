@@ -6,9 +6,11 @@ import {} from "react";
 
 function App() {
   return (
-    <>
-      <Currency/>
-    </>
+    <div className="bg-black h-screen pt-20">
+       <Currency/>
+    </div>
+     
+   
   );
 }
 

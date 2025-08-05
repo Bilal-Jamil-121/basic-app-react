@@ -49,7 +49,7 @@ console.log(data);
 
 
   return (
-    <div className=' z-1 bg-blue-900 p-5 h-1/3 py-5 place-self-center mt-18 rounded-2xl'>
+    <div className=' z-1 bg-gradient-to-bl from-black  to-cyan-500 p-5  py-5 place-self-center mt-18 rounded-2xl'>
         <div className='text-white text-3xl flex justify-center font-semibold'>Weather App</div>
       <div className='mt-5 flex items-center gap-5'>
         <input ref={inputRef} className='bg-amber-50 p-2 text-black rounded w-[80%]' placeholder='Search' type="text" />
