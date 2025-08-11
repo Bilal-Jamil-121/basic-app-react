@@ -113,9 +113,9 @@ const Page = () => {
   };
 
   return (
-    <div className='pt-5 w-full  mx-auto md:px-100 bg-black min-h-screen'>
+    <div className='pt-5 w-full  mx-auto  md:px-100 bg-black min-h-screen'>
       
-      <h1 className='flex justify-center text-white font-bold text-2xl mb-4'>Quiz App</h1>
+      <h1 className='flex justify-center text-white  font-bold text-2xl mb-4'>Quiz App</h1>
       <h1 className='flex text-red-500 justify-center font-bold text-2xl mb-4'>Time {counter} sec out of 100 sec</h1>
     { !start&&( <button onClick={()=>{
       setFinished(!finished);
@@ -126,9 +126,9 @@ const Page = () => {
       <hr />
       {!finished && (
         <>
-          <h2 className='flex justify-center font-bold text-2xl mb-4'>Your score is {Correct}</h2>
+          <h2 className='flex justify-center font-bold text-white text-2xl mb-4'>Your score is {Correct}</h2>
           <div className='mt-5'>
-            <h2 className='font-semibold text-lg mb-3'>{index + 1}. {question.question}</h2>
+            <h2 className='font-semibold text-white text-lg mb-3'>{index + 1}. {question.question}</h2>
             <ul className='space-y-2'>
               <li className={`p-3 rounded cursor-pointer border ${getOptionClass("A")}`} onClick={() => handleAnswer("A")}>{question.option1}</li>
               <li className={`p-3 rounded cursor-pointer border ${getOptionClass("B")}`} onClick={() => handleAnswer("B")}>{question.option2}</li>
@@ -162,8 +162,8 @@ const Page = () => {
 
       {(finished && start) && (
         <div className='text-center mt-10'>
-          <h2 className='text-2xl font-bold mb-2'>Quiz Completed!</h2>
-          <p className='text-lg mb-6'>You scored {Correct} out of {mcq.length}</p>
+          <h2 className='text-2xl font-bold mb-2 text-white'>Quiz Completed!</h2>
+          <p className='text-lg mb-6 text-white'>You scored {Correct} out of {mcq.length}</p>
           <button
             onClick={handlereset}
             className='bg-red-600 text-white px-5 py-2 rounded hover:bg-red-700'
